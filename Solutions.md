@@ -22,15 +22,31 @@ var createCounter = function(n) {
 };
 ```
 
-**03) 2667. Create Hello World Function.**
+**03) 2704. To Be Or Not To Be.**
 
 ```js
-function createHelloWorld() 
+var expect = function(val) 
 {
-	return function(...args) 
-    {
-        return "Hello World";
-    };
+    function toBe(val2) {
+       if (val === val2) {
+           return true
+       } else {
+           throw new Error('Not Equal')
+       }
+    }
+
+    function notToBe(val2){
+        if (val !== val2) {
+            return true
+        } else {
+            throw new Error('Equal')
+        }
+    }
+
+    return {
+        toBe,
+        notToBe
+    }
 };
 ```
 
